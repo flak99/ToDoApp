@@ -1,0 +1,13 @@
+:root {
+  --main-color: rgb(64, 68, 201);
+  --second-color: rgb(255, 255, 255);
+  --active-color: rgb(90, 94, 226);
+}
+
+.duties_area {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: cadetblue;
+  border: solid 1px black;
+}

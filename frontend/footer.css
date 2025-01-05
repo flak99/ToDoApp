@@ -3,8 +3,9 @@
   font-family: "Poppins", serif;
 }
 :root {
-  --main-color: rgb(2, 138, 69);
-  --second-color: rgb(226, 233, 226);
+  --main-color: rgb(64, 68, 201);
+  --second-color: rgb(255, 255, 255);
+  --active-color: rgb(90, 94, 226);
 }
 footer {
   display: flex;
