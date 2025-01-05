@@ -7,7 +7,9 @@
   --second-color: rgb(255, 255, 255);
   --active-color: rgb(90, 94, 226);
 }
-
+html {
+  background-color: var(--main-color);
+}
 .main_page {
   width: 100%;
   display: flex;
@@ -27,7 +29,7 @@
   height: 100px;
   padding: 10px;
   border-radius: 50px 0 0 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   margin-left: 1em;
 }
 .scrol-items {

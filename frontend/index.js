@@ -24,11 +24,25 @@ for (let i = 10; i <= 31; i++) {
   let data = `${i}.01`;
   dataArray.push(data);
 }
-console.log(dataArray);
 
 dataArray.forEach((data) => {
   let dataSet = document.createElement("div");
   dataSet.classList.add("scrol-items");
   dataSet.innerHTML = data;
   dataAreaView.appendChild(dataSet);
+});
+
+// Metoda DoneTask i DeleteTask
+
+const deleteTaskBtn = document.getElementById("delete_btn_ID");
+const doneTaskBtn = document.getElementById("done_btn");
+
+deleteTaskBtn.addEventListener("click", (event) => {
+  console.log("usueniato zadanie");
+  event.stopPropagation();
+});
+
+doneTaskBtn.addEventListener("click", () => {
+  console.log("Zrobiono zadanie ");
+  doneTaskBtn.classList.toggle("duty_done");
 });
