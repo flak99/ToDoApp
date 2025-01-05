@@ -27,6 +27,7 @@
   border-radius: 10px;
   background-color: var(--main-color);
   margin-top: 0.3em;
+  transition: all 0.3s ease;
   /* box-shadow: 2px 2px 4px grey; */
 }
 .duty_text {
