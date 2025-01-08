@@ -1,17 +1,3 @@
-// const zadania = ["Umyc rece", "kupic pączka", "Sprzedać nerkę", "poczytać"];
-
-// let przycisk = document.getElementById("btn");
-// let inputArea = document.getElementById("inputArea");
-// let zadania = document.querySelectorAll(".ala");
-
-// przycisk.addEventListener("click", function () {
-//   inputArea.classList.toggle("open");
-//   zadania.forEach((e) => {
-//     e.classList.add("open");
-//   });
-//   console.log("click");
-// });
-
 // Wyświetlanie dat
 const dataArray = [];
 const dataAreaView = document.getElementById("dates_container_ID");
@@ -34,15 +20,56 @@ dataArray.forEach((data) => {
 
 // Metoda DoneTask i DeleteTask
 
-const deleteTaskBtn = document.getElementById("delete_btn_ID");
-const doneTaskBtn = document.getElementById("done_btn");
+// Dodawanie zadan do listy
+const listOfTaskCont = [];
+function AddTask() {
+  let userTask = prompt("Dodaj zadanie");
+  listOfTaskCont.push(userTask);
+  console.log(listOfTaskCont);
+  ShowTask();
+}
 
-deleteTaskBtn.addEventListener("click", (event) => {
-  console.log("usueniato zadanie");
-  event.stopPropagation();
-});
+//Wyświetlanie zadań
+function ShowTask() {
+  let listOfTaskView = document.getElementById("list_of_duties_ID");
+  let taskBoard = document.createElement("div");
+  taskBoard.classList.add("duty");
+  taskBoard.id = "done_btn";
 
-doneTaskBtn.addEventListener("click", () => {
-  console.log("Zrobiono zadanie ");
-  doneTaskBtn.classList.toggle("duty_done");
-});
+  let taskBoardText = document.createElement("div");
+  taskBoardText.classList.add("duty_text");
+  taskBoardText.textContent = "Zrobic pranie";
+
+  let taskBoardButtonArea = document.createElement("div");
+  taskBoardButtonArea.classList.add("duty_delete_btn");
+
+  let taskBoardButton = document.createElement("button");
+  taskBoardButton.classList.add("delete_btn");
+  taskBoardButton.id = "delete_btn_ID";
+  taskBoardButton.textContent = "usuń";
+
+  listOfTaskView.appendChild(taskBoard);
+  taskBoard.appendChild(taskBoardText);
+  taskBoard.appendChild(taskBoardButtonArea);
+  taskBoard.appendChild(taskBoardButton);
+
+  const deleteTaskBtn = document.getElementById("delete_btn_ID");
+  const doneTaskBtn = document.getElementById("done_btn");
+
+  deleteTaskBtn.addEventListener("click", (event) => {
+    console.log("usueniato zadanie");
+    event.stopPropagation();
+  });
+
+  doneTaskBtn.addEventListener("click", () => {
+    console.log("Zrobiono zadanie ");
+    doneTaskBtn.classList.toggle("duty_done");
+  });
+}
+
+/* <div class="duty" id="done_btn">
+<div class="duty_text">Zrobić pranie</div>
+<div class="duty_delete_btn">
+  <button class="delete_btn" id="delete_btn_ID">usuń</button>
+</div>
+</div> */
