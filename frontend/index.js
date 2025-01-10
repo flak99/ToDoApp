@@ -28,7 +28,9 @@ class TaskClass {
 }
 
 // Dodawanie zadan do listy
-const listOfTaskCont = [];
+
+const listOfTaskCont = []; // Tablica przechowująca zadania
+
 function AddTask() {
   let userTask = prompt("Dodaj zadanie");
   let userTaskData = prompt("podaj date");
@@ -36,48 +38,47 @@ function AddTask() {
   listOfTaskCont.push(task);
   console.log(listOfTaskCont);
   ShowTask();
-
-  console.log(task.text, task.data);
 }
 
-//Wyświetlanie zadań
 function ShowTask() {
   let listOfTaskView = document.getElementById("list_of_duties_ID");
-  let taskBoard = document.createElement("div");
-  taskBoard.classList.add("duty");
 
-  let taskBoardText = document.createElement("div");
-  taskBoardText.classList.add("duty_text");
-  listOfTaskCont.forEach((e) => {
-    taskBoardText.textContent = e.text;
-  });
+  // Wyczyść poprzednie elementy
+  listOfTaskView.innerHTML = "";
 
-  let taskBoardButtonArea = document.createElement("div");
-  taskBoardButtonArea.classList.add("duty_delete_btn");
+  listOfTaskCont.forEach((task) => {
+    let taskBoard = document.createElement("div");
+    taskBoard.classList.add("duty");
 
-  let taskBoardButton = document.createElement("button");
-  taskBoardButton.classList.add("delete_btn");
-  taskBoardButton.textContent = "usuń";
+    let taskBoardText = document.createElement("div");
+    taskBoardText.classList.add("duty_text");
+    taskBoardText.textContent = task.text;
 
-  listOfTaskView.appendChild(taskBoard);
-  taskBoard.appendChild(taskBoardText);
-  taskBoard.appendChild(taskBoardButtonArea);
-  taskBoardButtonArea.appendChild(taskBoardButton);
+    let taskBoardButtonArea = document.createElement("div");
+    taskBoardButtonArea.classList.add("duty_delete_btn");
 
-  const deleteTaskBtn = document.querySelectorAll(".delete_btn");
-  const doneTaskBtn = document.querySelectorAll(".duty");
+    let taskBoardButton = document.createElement("button");
+    taskBoardButton.classList.add("delete_btn");
+    taskBoardButton.textContent = "usuń";
 
-  deleteTaskBtn.forEach((e) => {
-    e.addEventListener("click", (event) => {
-      console.log("usueniato zadanie");
-      event.stopPropagation();
-    });
-  });
+    // Dodawanie elementów
+    taskBoard.appendChild(taskBoardText);
+    taskBoard.appendChild(taskBoardButtonArea);
+    taskBoardButtonArea.appendChild(taskBoardButton);
+    listOfTaskView.appendChild(taskBoard);
 
-  doneTaskBtn.forEach((e) => {
-    e.addEventListener("click", () => {
+    // Listener dla ukończenia zadania
+    taskBoard.addEventListener("click", () => {
       console.log("Zrobiono zadanie ");
-      e.classList.toggle("duty_done");
+      taskBoard.classList.toggle("duty_done");
+    });
+
+    // Listener dla usuwania zadania
+    taskBoardButton.addEventListener("click", (event) => {
+      event.stopPropagation(); // Zapobiega wywołaniu listenera "Zrobiono zadanie"
+      console.log("Usunięto zadanie");
+      listOfTaskCont.splice(listOfTaskCont.indexOf(task), 1); // Usuń zadanie z tablicy
+      ShowTask(); // Odśwież listę
     });
   });
 }
