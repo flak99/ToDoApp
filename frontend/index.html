@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDoApp</title>
+    <title>Taskify</title>
     <link rel="stylesheet" href="/frontend/footer.css" />
     <link rel="stylesheet" href="/frontend/main.css" />
     <link rel="stylesheet" href="/frontend/duties.css" />
@@ -21,12 +21,12 @@
           <div class="line_bar"></div>
           <div class="line_bar active-style"></div>
         </div>
-        <div class="data_label">5 MAR</div>
+        <div class="data_label" id="data_label_ID"></div>
       </div>
       <div class="down_footer">
         <div class="task_text">
           <p class="today_label">Dzisiaj</p>
-          <p class="number_of_task">6 zadań</p>
+          <p class="number_of_task" id="number_of_task_ID"></p>
         </div>
         <button class="add_btn" onclick="AddTask()">+ Dodaj Zadanie</button>
       </div>

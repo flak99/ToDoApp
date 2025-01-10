@@ -47,6 +47,7 @@ html {
   font-weight: bold;
   scrollbar-width: none;
 }
+
 .scroll-container::-webkit-scrollbar {
   display: none;
 }
