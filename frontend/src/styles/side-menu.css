@@ -9,6 +9,7 @@
 }
 
 .side_menu_modal {
+  display: none;
   position: absolute;
   width: 70%;
   height: 100vh;
