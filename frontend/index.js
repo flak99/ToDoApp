@@ -106,3 +106,36 @@ function ShowTask() {
   let taskCountArea = document.getElementById("number_of_task_ID");
   taskCountArea.textContent = `${taskCount} zadań`;
 }
+
+// Pasek doświadczenia
+
+// Poziomy uzytkownka
+
+// Dodawanie i rozciaganie paska exp
+let expBar = document.getElementById("exp_bar_ID");
+let borderLVL = maxExpLvl;
+
+let zdobytePunkty = 47;
+let dodajBtn = document.getElementById("btn-dodaj");
+
+dodajBtn.addEventListener("click", () => {
+  //Dodawanie punktów
+  if (punkty < borderLVL) {
+    punkty += zdobytePunkty;
+    console.log(punkty);
+  } else {
+    punkty = borderLVL;
+    console.log(`${punkty}`);
+  }
+
+  //Wystwtlanie paska exp
+  let punktyProcentowo = (punkty / borderLVL) * 100;
+  expBar.style.width = `${punktyProcentowo}%`;
+
+  //Wyswietlanie poziomu urzytkownika
+  let lvlLabel = document.getElementById("user_level_ID");
+  let userLVL = 1;
+  if (punkty > borderLVL) {
+    lvlLabel.innerHTML = `${userLVL + 1}`;
+  }
+});

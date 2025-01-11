@@ -1,0 +1,50 @@
+:root {
+  --main-color: rgb(64, 68, 201);
+  --second-color: rgb(255, 255, 255);
+  --active-color: rgb(90, 94, 226);
+  --side-menu-color: rgba(33, 38, 172, 0.782);
+  --user-logo: 100px;
+  --exp_background: rgba(203, 203, 124, 0.832);
+  --exp_bar: rgb(224, 224, 110);
+}
+
+.side_menu_modal {
+  position: absolute;
+  width: 70%;
+  height: 100vh;
+  z-index: 1111;
+  background-color: var(--side-menu-color);
+  backdrop-filter: blur(0.3em);
+}
+
+.lvl_backgroudn_area {
+  display: flex;
+  margin-left: 1.1em;
+  width: 80%;
+  height: 10px;
+  display: flex;
+  background-color: var(--exp_background);
+  justify-content: left;
+  border-radius: 10px 0 10px 0;
+}
+
+.user_label,
+.user_level {
+  margin-top: 0.3em;
+  font-size: 1.5rem;
+  display: flex;
+  color: var(--second-color);
+  justify-content: center;
+  font-weight: bold;
+}
+.user_level {
+  font-size: 3rem;
+  margin-top: 1em;
+}
+.exp_bar {
+  width: 0%;
+  height: 10px;
+  background-color: gold;
+  border-radius: 10px 0 10px 0;
+  transition: width 0.5s ease;
+}
