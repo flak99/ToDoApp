@@ -7,7 +7,7 @@ class TaskClass {
 }
 
 // Dodawanie zadan do listy
-const listOfTaskCont = []; // Tablica przechowująca zadania
+const listOfTaskCont = [];
 
 function AddTask() {
   let userTask = prompt("Dodaj zadanie");

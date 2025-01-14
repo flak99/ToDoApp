@@ -6,7 +6,7 @@
     <title>Taskify</title>
     <link rel="stylesheet" href="/frontend/src/styles/duties.css" />
     <link rel="stylesheet" href="/frontend/src/styles/footer.css" />
-    <link rel="stylesheet" href="/frontend/src/styles/main.css" />
+    <link rel="stylesheet" href="/frontend/src/styles/daty.css" />
     <link rel="stylesheet" href="/frontend/src/styles/side-menu.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,10 +45,22 @@
     </footer>
     <div class="main_page">
       <div class="buffor"></div>
-      <div class="dates_container" id="dates_container_ID"></div>
-      <div class="duties_area">
-        <div class="list_of_duties" id="list_of_duties_ID"></div>
+      <div class="dates_container" id="dates_container_ID">
+        <button type="" class="date" id="btn1">
+          <p class="date-number"></p>
+          <p class="date-name"></p>
+        </button>
+        <button class="date" id="btn2">
+          <p class="date-number"></p>
+          <p class="date-name"></p>
+        </button>
+        <button class="date" id="btn3">
+          <p class="date-number"></p>
+          <p class="date-name"></p>
+        </button>
       </div>
+
+      <div class="list_of_duties" id="list_of_duties_ID"></div>
     </div>
 
     <script src="/frontend/src/js/index.js"></script>
