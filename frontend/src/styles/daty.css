@@ -28,7 +28,7 @@ html {
   align-items: center;
   margin-left: 0.5em;
   margin-top: 0.5em;
-  width: 100%;
+  width: calc(100%-0.5em);
   height: 10vh;
 }
 

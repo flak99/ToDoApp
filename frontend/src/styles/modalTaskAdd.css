@@ -1,0 +1,60 @@
+:root {
+  --main-color: rgb(64, 68, 201);
+  --second-color: rgb(255, 255, 255);
+  --active-color: rgb(90, 94, 226);
+  --border-view: 20px 2px 20px 2px;
+}
+
+.modal-add-task-cont-OFF {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  width: 100%;
+  height: 0%;
+  background-color: var(--main-color);
+}
+
+.modal-add-task-cont-ON {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  opacity: 100;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.input-data-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.inside-modal-add-task {
+  width: 100%;
+}
+
+.task-text {
+  height: 40%;
+  width: 70%;
+  margin: 0.5em;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.submit-add-task {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 5px;
+  padding: 0.3em;
+  color: var(--main-color);
+}

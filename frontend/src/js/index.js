@@ -10,9 +10,8 @@ class TaskClass {
 const listOfTaskCont = [];
 
 function AddTask() {
-  let userTask = prompt("Dodaj zadanie");
-  let userTaskData = prompt("podaj date");
-  let task = new TaskClass(userTask, userTaskData);
+  let userTask = document.getElementById("task-btn-add-ID").value;
+  let task = new TaskClass(userTask);
   listOfTaskCont.push(task);
   console.log(listOfTaskCont);
   ShowTask();
@@ -69,3 +68,8 @@ function ShowTask() {
 //Footer wysiws
 let taskCountArea = document.getElementById("number_of_task_ID");
 taskCountArea.textContent = `0 zadań`;
+
+function ShowTaskModal() {
+  let modal = document.getElementById("modal-task-ID");
+  modal.classList.toggle("modal-add-task-cont-ON");
+}

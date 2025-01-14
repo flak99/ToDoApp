@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taskify</title>
     <link rel="stylesheet" href="/frontend/src/styles/duties.css" />
+    <link rel="stylesheet" href="/frontend/src/styles/modalTaskAdd.css" />
     <link rel="stylesheet" href="/frontend/src/styles/footer.css" />
     <link rel="stylesheet" href="/frontend/src/styles/daty.css" />
     <link rel="stylesheet" href="/frontend/src/styles/side-menu.css" />
@@ -40,8 +41,28 @@
           <p class="today_label">Dzisiaj</p>
           <p class="number_of_task" id="number_of_task_ID"></p>
         </div>
-        <button class="add_btn" onclick="AddTask()">+ Dodaj Zadanie</button>
+        <button class="add_btn" onclick="ShowTaskModal()">
+          + Dodaj Zadanie
+        </button>
       </div>
+
+      <div class="modal-add-task-cont-OFF" id="modal-task-ID">
+        <div class="inside-modal-add-task">
+          <div class="input-data-cont">
+            <input
+              type="text"
+              id="task-btn-add-ID"
+              class="task-text"
+              placeholder="Nazwa zadania" />
+            <button
+              class="submit-add-task"
+              onclick="ShowTaskModal(); AddTask()">
+              Dodaj
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- sad -->
     </footer>
     <div class="main_page">
       <div class="buffor"></div>
