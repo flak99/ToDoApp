@@ -49,6 +49,21 @@ function ConvertMounthsFormat() {
   return mounthsNumber[mounthsBeforeConvert];
 }
 
+function ConvertWeekDayName(number) {
+  // 1 -> dzisiaj, 2 -> wczoraj, 3 -> jutro
+  let data = new Date();
+  let dayname = data.getDay();
+  let DayNames = ["PON", "WT", "ŚR", "CZW", "PI", "SOB", "NIE"];
+
+  if (number === 1) {
+    return DayNames[dayname];
+  } else if (number === 2) {
+    return DayNames[dayname - 1];
+  } else {
+    return DayNames[dayname + 1];
+  }
+}
+
 function ShowYesterdayDate() {
   let wczorajData = new Date(data);
   wczorajData.setDate(data.getDate() - 1);
@@ -67,7 +82,7 @@ function ShowYesterdayDate() {
 
   //Formatowanie nazwy dnia oraz wyswitlanie go
   let weekDayName = btn1.children[1];
-  weekDayName.innerHTML = ConvertDataNameFormat();
+  weekDayName.innerHTML = ConvertWeekDayName(2);
 }
 function ShowTodayData() {
   let dzisiaj = data.getDate();
@@ -83,7 +98,7 @@ function ShowTodayData() {
   dataNumber.innerHTML = dzisiaj;
 
   let weekDayName = btn2.children[1];
-  weekDayName.innerHTML = ConvertDataNameFormat();
+  weekDayName.innerHTML = ConvertWeekDayName(1);
 }
 
 function ShowTommorowData() {
@@ -102,7 +117,7 @@ function ShowTommorowData() {
   dataNumber.innerHTML = jutro;
 
   let weekDayName = btn3.children[1];
-  weekDayName.innerHTML = ConvertDataNameFormat();
+  weekDayName.innerHTML = ConvertWeekDayName(3);
 }
 
 //Metoda wyboru danej daty w main page
