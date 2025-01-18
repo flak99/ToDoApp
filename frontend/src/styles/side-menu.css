@@ -10,8 +10,9 @@
 }
 
 .side-menu-container {
-  visibility: visible;
+  visibility: hidden;
   display: flex;
+  flex-direction: column;
   position: absolute;
   z-index: 11111;
   width: 100%;
@@ -32,15 +33,23 @@
   }
 }
 
+.modal-content-bottom {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .button-close-user-menu {
   display: flex;
   width: 30%;
   height: 100%;
+  z-index: 1111;
 }
 
 .x-line {
   width: 50px;
-  height: 4px;
+  height: 8px;
   background-color: var(--second-color);
   border-radius: 20px;
   position: absolute;
@@ -55,8 +64,45 @@
 .x2 {
   transform: translate(-50%, -50%) rotate(-45deg) scale(0.5);
 }
+.user-lvl-label {
+  display: flex;
+  justify-content: center;
+  font-size: 6rem;
+  font-weight: bold;
+  z-index: 1111;
+  color: var(--second-color);
+}
+.lvl-number {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--second-color);
+}
+.exp-label {
+  display: flex;
+  background-color: var(--exp_background);
+  width: 0%;
+  justify-content: left;
+  transition: width 0.3s ease-in-out;
+  text-align: center;
+}
 
-.user-menu-text {
-  width: 70%;
-  height: 100%;
+.logout-btn-area {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.logout-btn {
+  width: 50%;
+  font-size: 1.3rem;
+  background-color: var(--second-color);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.4em;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-top: 7em;
+  text-align: center;
 }

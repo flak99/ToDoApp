@@ -13,32 +13,33 @@ function OpenUserMenu() {
   });
 }
 
-// let lvlLabel = document.getElementById("lvl-label-ID");
-// let lvlNumber = document.getElementById("lvl-number-ID");
-// let btn = document.getElementById("btn-lvl-ID");
-// let expLabel = document.getElementById("exp-label-ID");
+let lvlLabel = document.getElementById("user-lvl-label-ID");
+let lvlNumber = document.getElementById("lvl-number-ID");
+let btn = document.getElementById("btn-lxl-ID");
+let expLabel = document.getElementById("exp-label-ID");
 
-// let userLvl = 1;
-// let userExp = 0;
-// let needExp = 160;
+let userLvl = 1;
+let userExp = 0;
+let needExp = 160;
 
-// function updateUI() {
-//   lvlLabel.innerHTML = userLvl;
-//   lvlNumber.innerHTML = `${userExp} / ${needExp}`;
-//   let percentageExp = (userExp / needExp) * 100;
-//   expLabel.style.width = `${percentageExp}%`;
-// }
+function updateUI() {
+  let percentageExp = (userExp / needExp) * 100;
+  lvlLabel.innerHTML = userLvl;
+  lvlNumber.innerHTML =
+    `${userExp} / ${needExp} pkt.` + " " + `(${Math.floor(percentageExp)}%)`;
+  expLabel.style.width = `${percentageExp}%`;
+}
 
-// function AddExp() {
-//   userExp += 23;
+function AddExp() {
+  userExp += 23;
 
-//   if (userExp >= needExp) {
-//     userLvl += 1;
-//     userExp = userExp - needExp;
-//     needExp = Math.floor(needExp * 1.4);
-//   }
+  if (userExp >= needExp) {
+    userLvl += 1;
+    userExp = userExp - needExp;
+    needExp = Math.floor(needExp * 1.4);
+  }
 
-//   updateUI();
-// }
+  updateUI();
+}
 
-// updateUI();
+updateUI();

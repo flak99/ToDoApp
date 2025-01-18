@@ -60,7 +60,11 @@ function ConvertWeekDayName(number) {
   } else if (number === 2) {
     return DayNames[dayname - 1];
   } else {
-    return DayNames[dayname + 1];
+    if (dayname === 6) {
+      return DayNames[0];
+    } else {
+      return DayNames[dayname + 1];
+    }
   }
 }
 
