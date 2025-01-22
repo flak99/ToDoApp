@@ -9,11 +9,21 @@ class TaskClass {
 // Dodawanie zadan do listy
 const listOfTaskCont = [];
 
+let userTask = document.getElementById("task-btn-add-ID");
+userTask.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    AddTask();
+    ShowTaskModal();
+  }
+});
+
 function AddTask() {
-  let userTask = document.getElementById("task-btn-add-ID").value;
-  let task = new TaskClass(userTask);
+  let userTask = document.getElementById("task-btn-add-ID");
+  let taskUser = userTask.value;
+  userTask.value = "";
+  let task = new TaskClass(taskUser);
   listOfTaskCont.push(task);
-  console.log(listOfTaskCont);
+
   ShowTask();
 }
 
@@ -46,14 +56,13 @@ function ShowTask() {
 
     // Listener dla ukończenia zadania
     taskBoard.addEventListener("click", () => {
-      console.log("Zrobiono zadanie ");
       taskBoard.classList.toggle("duty_done");
     });
 
     // Listener dla usuwania zadania
     taskBoardButton.addEventListener("click", (event) => {
       event.stopPropagation(); // Zapobiega wywołaniu listenera "Zrobiono zadanie"
-      console.log("Usunięto zadanie");
+
       listOfTaskCont.splice(listOfTaskCont.indexOf(task), 1); // Usuń zadanie z tablicy
       ShowTask(); // Odśwież listę
     });

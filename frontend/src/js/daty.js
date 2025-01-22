@@ -53,13 +53,14 @@ function ConvertWeekDayName(number) {
   // 1 -> dzisiaj, 2 -> wczoraj, 3 -> jutro
   let data = new Date();
   let dayname = data.getDay();
-  let DayNames = ["PON", "WT", "ŚR", "CZW", "PI", "SOB", "NIE"];
+
+  let DayNames = ["NIE", "PO", "WT", "ŚR", "CZW", "PI", "SOB"];
 
   if (number === 1) {
     return DayNames[dayname];
   } else if (number === 2) {
     return DayNames[dayname - 1];
-  } else {
+  } else if (number === 3) {
     if (dayname === 6) {
       return DayNames[0];
     } else {

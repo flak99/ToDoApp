@@ -15,8 +15,9 @@
   flex-direction: column;
   width: 90%;
   height: 70%;
-
-  /* border: solid 1px black; */
+  margin-left: 1em;
+  max-height: 350px;
+  overflow: auto;
 }
 .duty {
   display: flex;
@@ -24,11 +25,11 @@
   align-items: center;
   width: 100%;
   height: 15%;
+  min-height: 50px;
   border-radius: 10px;
   background-color: var(--main-color);
   margin-top: 0.3em;
   transition: all 0.3s ease;
-  /* box-shadow: 2px 2px 4px grey; */
 }
 .duty_text {
   display: flex;

@@ -1,6 +1,7 @@
 * {
   margin: 0;
   font-family: "Poppins", serif;
+  max-height: 570px;
 }
 :root {
   --main-color: rgb(64, 68, 201);
